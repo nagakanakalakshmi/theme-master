@@ -8,3 +8,10 @@
 ehthumbs.db
 Thumbs.db
 .shopify
+
+
+# Store-specific layout and configuration
+config/settings_data.json
+templates/index.json
+templates/cart.json
+locales/*.json

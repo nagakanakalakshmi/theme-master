@@ -1,0 +1,60 @@
+{% comment %}
+  Reusable Feature Banner Section
+  Added from theme-master to test shared feature syncing
+{% endcomment %}
+
+<section class="feature-banner" style="background-color: {{ section.settings.bg_color }}; padding: 40px 0; text-align: center;">
+  <div class="page-width">
+    <h2 style="margin-bottom: 10px;">{{ section.settings.title }}</h2>
+    <p style="margin-bottom: 20px;">{{ section.settings.subtitle }}</p>
+    {% if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link }}" class="button" style="padding: 10px 20px; background-color: #000; color: #fff; border-radius: 5px;">
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feature Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Banner Title",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Your success is our priority."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Banner",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
